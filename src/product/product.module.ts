@@ -9,6 +9,8 @@ import { FindByNameUseCaseService } from './services/find-by-name-use-case/find-
 import { FindByNameController } from './controllers/find-by-name/find-by-name.controller';
 import { EditProductUseCaseService } from './services/edit-product-use-case/edit-product-use-case.service';
 import { EditProductController } from './controllers/edit-product/edit-product.controller';
+import { DeleteProductUseCaseService } from './services/delete-product-use-case/delete-product-use-case.service';
+import { DeleteProductController } from './controllers/delete-product/delete-product.controller';
 
 @Module({
   imports: [
@@ -19,12 +21,14 @@ import { EditProductController } from './controllers/edit-product/edit-product.c
     GetProductsService,
     EditProductUseCaseService,
     FindByNameUseCaseService,
+    DeleteProductUseCaseService,
   ],
   controllers: [
     CreateProductUseCaseController,
     GetProductsController,
     FindByNameController,
     EditProductController,
+    DeleteProductController,
   ],
 })
 export class ProductModule {}
