@@ -11,7 +11,7 @@ export class EditProductUseCaseService {
     @InjectModel(Product.name) private productModel: mongoose.Model<Product>,
     private findProductByName: FindByNameUseCaseService,
   ) {}
-  async execute(dto: EditProductDTO) {
+  async execute(dto: EditProductDTO): Promise<Product> {
     const product = await this.findProductByName.execute(dto.name);
     if (!product) {
       throw new NotFoundException('Product does not exists');

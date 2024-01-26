@@ -9,7 +9,7 @@ export class CreateProductUseCaseService {
   constructor(
     @InjectModel(Product.name) private productModel: mongoose.Model<Product>,
   ) {}
-  async execute(dto: CreateProductDTO) {
+  async execute(dto: CreateProductDTO): Promise<Product> {
     const productAlreadyExists = await this.productModel.findOne({
       name: dto.name,
     });
