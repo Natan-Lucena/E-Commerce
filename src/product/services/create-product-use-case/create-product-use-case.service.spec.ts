@@ -41,7 +41,6 @@ describe('CreateProductUseCaseService', () => {
   });
 
   beforeEach(async () => {
-    // Limpe o banco de dados antes de cada teste
     await mongoose.connection.collection('Product').deleteMany({});
   });
 
